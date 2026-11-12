@@ -1,0 +1,156 @@
+{
+  "tag": "test",
+  "arch": "transformer",
+  "n_models": 5,
+  "weights_dir": "models/tuned_15min",
+  "period": [
+    "2024-05-02 09:15:00",
+    "2025-04-07 15:15:00"
+  ],
+  "days": 232,
+  "bars": 5800,
+  "evaluated_predictions": 5799,
+  "true_label_counts": {
+    "sideways": 3775,
+    "bull": 1524,
+    "bear": 500
+  },
+  "predicted_counts": {
+    "sideways": 2642,
+    "bull": 2233,
+    "bear": 826,
+    "high_vol": 98
+  },
+  "classification": {
+    "accuracy": 0.51802034833592,
+    "macro_f1": 0.30917829806365504,
+    "macro_f1_present": 0.4122377307515401,
+    "per_class": {
+      "bull": {
+        "precision": 0.42274966412897447,
+        "recall": 0.6194225721784777,
+        "f1": 0.5025286132552569,
+        "support": 1524
+      },
+      "bear": {
+        "precision": 0.09322033898305085,
+        "recall": 0.154,
+        "f1": 0.11613876319758673,
+        "support": 500
+      },
+      "sideways": {
+        "precision": 0.7505677517032551,
+        "recall": 0.5252980132450331,
+        "f1": 0.6180458158017765,
+        "support": 3775
+      },
+      "high_vol": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      }
+    },
+    "confusion_matrix": [
+      [
+        944,
+        60,
+        520,
+        0
+      ],
+      [
+        186,
+        77,
+        139,
+        98
+      ],
+      [
+        1103,
+        689,
+        1983,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "confidence": {
+    "mean": 0.6227888400276317,
+    "low_confidence_share": 0.16623555785480254,
+    "accuracy_high_confidence": 0.5263702171664943,
+    "accuracy_low_confidence": 0.47614107883817425,
+    "macro_f1_high_confidence": 0.4251030206599487
+  },
+  "trading": {
+    "sharpe": -1.5911026319186674,
+    "sortino": -2.045081716522391,
+    "max_drawdown": -0.17875652932413155,
+    "cumulative_return": -0.07586347899274992,
+    "annualized_return": -0.08214107769205181,
+    "annualized_volatility": 0.0880406570920277,
+    "avg_exposure": 0.619244697361614,
+    "total_turnover": 33.5,
+    "cost_drag": 0.01675
+  },
+  "buy_and_hold": {
+    "sharpe": -0.60439071652183,
+    "sortino": -0.7962397524356919,
+    "max_drawdown": -0.16780385479650606,
+    "cumulative_return": -0.018479361329145627,
+    "annualized_return": -0.020059754422461662,
+    "annualized_volatility": 0.11831431579534302,
+    "avg_exposure": 1.0,
+    "total_turnover": 1.0,
+    "cost_drag": 0.0005
+  },
+  "uptime": {
+    "bars_received": 5800,
+    "bars_expected": 5800,
+    "share": 1.0,
+    "incomplete_days": {}
+  },
+  "latency_ms": {
+    "p50": 95.43720001238398,
+    "p95": 163.1511649757158,
+    "max": 400.42560000438243,
+    "requirement_ms": 2000
+  },
+  "consistency_with_batch_pipeline": {
+    "prediction_agreement": 1.0,
+    "max_abs_probability_diff": 2.980232238769531e-07,
+    "daily_label_agreement": 1.0,
+    "bar_target_label_agreement": 1.0
+  },
+  "orders_placed": 0,
+  "replay_vs_validation": {
+    "macro_f1": {
+      "validation": 0.6130759009188833,
+      "replay": 0.4122377307515401,
+      "gap": -0.20083817016734323
+    },
+    "accuracy": {
+      "validation": 0.7022687609075043,
+      "replay": 0.51802034833592,
+      "gap": -0.1842484125715843
+    },
+    "sharpe": {
+      "validation": 0.5572696315407693,
+      "replay": -1.5911026319186674,
+      "gap": -2.1483722634594367
+    },
+    "max_drawdown": {
+      "validation": -0.10963902381764579,
+      "replay": -0.17875652932413155,
+      "gap": -0.06911750550648577
+    },
+    "cumulative_return": {
+      "validation": 0.23379426591857566,
+      "replay": -0.07586347899274992,
+      "gap": -0.3096577449113256
+    }
+  }
+}

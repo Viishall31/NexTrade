@@ -1,0 +1,304 @@
+{
+  "decided_at": "2026-09-17T01:01:13",
+  "note": "Experiment 2, designed after the Step 10 test results were seen; parameters chosen on validation only.",
+  "selection_rule": "max validation final capital, max drawdown no worse than buy & hold",
+  "default": {
+    "buy_threshold": 0.6,
+    "sell_threshold": 0.5,
+    "confirm_days": 2,
+    "sizing": "scaled",
+    "strong_margin": 0.15,
+    "stop_loss": 0.08,
+    "cooldown_days": 5,
+    "on_sell": "cash",
+    "name": "buy0.6|sell0.5|confirm2|scaled|stop8|cool5|cash"
+  },
+  "grid_size": 648,
+  "architectures": {
+    "lstm": {
+      "validation_buy_and_hold": {
+        "final_capital": 1300325.1054061237,
+        "max_drawdown": -0.16473148543730232
+      },
+      "default": {
+        "rulebook": {
+          "buy_threshold": 0.6,
+          "sell_threshold": 0.5,
+          "confirm_days": 2,
+          "sizing": "scaled",
+          "strong_margin": 0.15,
+          "stop_loss": 0.08,
+          "cooldown_days": 5,
+          "on_sell": "cash",
+          "name": "buy0.6|sell0.5|confirm2|scaled|stop8|cool5|cash"
+        },
+        "validation": {
+          "initial_capital": 1000000.0,
+          "final_capital": 1193783.3640397277,
+          "net_profit": 193783.36403972772,
+          "total_return": 0.19378336403972773,
+          "cagr": 0.08101350562525611,
+          "max_drawdown": -0.06676020901796531,
+          "max_drawdown_rupees": -74533.30198667431,
+          "sharpe": 0.3111489759648185,
+          "n_trades": 21,
+          "n_round_trips": 3,
+          "win_rate": 0.3333333333333333,
+          "total_costs": 11223.045286695231,
+          "interest_earned": 64050.621314140815,
+          "time_in_market": 0.6352530541012217
+        }
+      },
+      "tuned_cash": {
+        "rulebook": {
+          "buy_threshold": 0.7,
+          "sell_threshold": 0.6,
+          "confirm_days": 2,
+          "sizing": "full",
+          "strong_margin": 0.15,
+          "stop_loss": 0.05,
+          "cooldown_days": 5,
+          "on_sell": "cash",
+          "name": "buy0.7|sell0.6|confirm2|full|stop5|cool5|cash"
+        },
+        "drawdown_constraint_satisfied": true,
+        "validation": {
+          "initial_capital": 1000000.0,
+          "final_capital": 1249577.3431133577,
+          "net_profit": 249577.34311335767,
+          "total_return": 0.24957734311335766,
+          "cagr": 0.10294922027831666,
+          "max_drawdown": -0.07957711045780391,
+          "max_drawdown_rupees": -85168.28711863363,
+          "sharpe": 0.564305173797948,
+          "n_trades": "7",
+          "n_round_trips": "4",
+          "win_rate": 0.5,
+          "total_costs": 7278.399647483467,
+          "interest_earned": 67780.02258043888,
+          "time_in_market": 0.4956369982547993
+        }
+      },
+      "tuned_short": {
+        "rulebook": {
+          "buy_threshold": 0.6,
+          "sell_threshold": 0.4,
+          "confirm_days": 2,
+          "sizing": "scaled",
+          "strong_margin": 0.15,
+          "stop_loss": 0.05,
+          "cooldown_days": 5,
+          "on_sell": "short",
+          "name": "buy0.6|sell0.4|confirm2|scaled|stop5|cool5|short"
+        },
+        "drawdown_constraint_satisfied": true,
+        "validation": {
+          "initial_capital": 1000000.0,
+          "final_capital": 1316538.9570559396,
+          "net_profit": 316538.9570559396,
+          "total_return": 0.3165389570559396,
+          "cagr": 0.12856303726511475,
+          "max_drawdown": -0.1108068356373263,
+          "max_drawdown_rupees": -129550.42474766169,
+          "sharpe": 0.6352928069728211,
+          "n_trades": "30",
+          "n_round_trips": "7",
+          "win_rate": 0.5714285714285714,
+          "total_costs": 18801.11274897895,
+          "interest_earned": 149470.1507021835,
+          "time_in_market": 0.8359511343804538
+        }
+      }
+    },
+    "cnn_bilstm_attn": {
+      "validation_buy_and_hold": {
+        "final_capital": 1300325.1054061237,
+        "max_drawdown": -0.16473148543730232
+      },
+      "default": {
+        "rulebook": {
+          "buy_threshold": 0.6,
+          "sell_threshold": 0.5,
+          "confirm_days": 2,
+          "sizing": "scaled",
+          "strong_margin": 0.15,
+          "stop_loss": 0.08,
+          "cooldown_days": 5,
+          "on_sell": "cash",
+          "name": "buy0.6|sell0.5|confirm2|scaled|stop8|cool5|cash"
+        },
+        "validation": {
+          "initial_capital": 1000000.0,
+          "final_capital": 1216482.4040938902,
+          "net_profit": 216482.40409389022,
+          "total_return": 0.2164824040938902,
+          "cagr": 0.09000563374160597,
+          "max_drawdown": -0.08684557782259728,
+          "max_drawdown_rupees": -93273.58860159968,
+          "sharpe": 0.39549082455025,
+          "n_trades": 18,
+          "n_round_trips": 2,
+          "win_rate": 0.5,
+          "total_costs": 10968.759089292256,
+          "interest_earned": 56534.383108378766,
+          "time_in_market": 0.6963350785340314
+        }
+      },
+      "tuned_cash": {
+        "rulebook": {
+          "buy_threshold": 0.5,
+          "sell_threshold": 0.6,
+          "confirm_days": 2,
+          "sizing": "scaled",
+          "strong_margin": 0.15,
+          "stop_loss": null,
+          "cooldown_days": 0,
+          "on_sell": "cash",
+          "name": "buy0.5|sell0.6|confirm2|scaled|nostop|cool0|cash"
+        },
+        "drawdown_constraint_satisfied": true,
+        "validation": {
+          "initial_capital": 1000000.0,
+          "final_capital": 1280480.7282129135,
+          "net_profit": 280480.7282129135,
+          "total_return": 0.2804807282129136,
+          "cagr": 0.11486338919600025,
+          "max_drawdown": -0.06294165738411994,
+          "max_drawdown_rupees": -74680.61958106305,
+          "sharpe": 0.7114961178963526,
+          "n_trades": "17",
+          "n_round_trips": "2",
+          "win_rate": 0.5,
+          "total_costs": 10378.78479538144,
+          "interest_earned": 56862.68514154717,
+          "time_in_market": 0.6980802792321117
+        }
+      },
+      "tuned_short": {
+        "rulebook": {
+          "buy_threshold": 0.5,
+          "sell_threshold": 0.6,
+          "confirm_days": 3,
+          "sizing": "scaled",
+          "strong_margin": 0.15,
+          "stop_loss": 0.05,
+          "cooldown_days": 0,
+          "on_sell": "short",
+          "name": "buy0.5|sell0.6|confirm3|scaled|stop5|cool0|short"
+        },
+        "drawdown_constraint_satisfied": true,
+        "validation": {
+          "initial_capital": 1000000.0,
+          "final_capital": 1419424.0298776957,
+          "net_profit": 419424.0298776957,
+          "total_return": 0.41942402987769567,
+          "cagr": 0.16653424215211476,
+          "max_drawdown": -0.09272902125483329,
+          "max_drawdown_rupees": -110751.00163490954,
+          "sharpe": 0.9491895354753134,
+          "n_trades": "25",
+          "n_round_trips": "6",
+          "win_rate": 0.6666666666666666,
+          "total_costs": 18516.59652987629,
+          "interest_earned": 156450.18096899195,
+          "time_in_market": 0.8638743455497382
+        }
+      }
+    },
+    "transformer": {
+      "validation_buy_and_hold": {
+        "final_capital": 1300325.1054061237,
+        "max_drawdown": -0.16473148543730232
+      },
+      "default": {
+        "rulebook": {
+          "buy_threshold": 0.6,
+          "sell_threshold": 0.5,
+          "confirm_days": 2,
+          "sizing": "scaled",
+          "strong_margin": 0.15,
+          "stop_loss": 0.08,
+          "cooldown_days": 5,
+          "on_sell": "cash",
+          "name": "buy0.6|sell0.5|confirm2|scaled|stop8|cool5|cash"
+        },
+        "validation": {
+          "initial_capital": 1000000.0,
+          "final_capital": 1204772.134401575,
+          "net_profit": 204772.13440157496,
+          "total_return": 0.20477213440157493,
+          "cagr": 0.08537851059208257,
+          "max_drawdown": -0.06656824200219147,
+          "max_drawdown_rupees": -69754.98450078396,
+          "sharpe": 0.364064931561644,
+          "n_trades": 19,
+          "n_round_trips": 3,
+          "win_rate": 0.3333333333333333,
+          "total_costs": 10885.34675693891,
+          "interest_earned": 62309.08691421519,
+          "time_in_market": 0.6474694589877836
+        }
+      },
+      "tuned_cash": {
+        "rulebook": {
+          "buy_threshold": 0.5,
+          "sell_threshold": 0.5,
+          "confirm_days": 2,
+          "sizing": "full",
+          "strong_margin": 0.15,
+          "stop_loss": 0.05,
+          "cooldown_days": 5,
+          "on_sell": "cash",
+          "name": "buy0.5|sell0.5|confirm2|full|stop5|cool5|cash"
+        },
+        "drawdown_constraint_satisfied": true,
+        "validation": {
+          "initial_capital": 1000000.0,
+          "final_capital": 1247212.8554319902,
+          "net_profit": 247212.85543199023,
+          "total_return": 0.24721285543199034,
+          "cagr": 0.10203087562467172,
+          "max_drawdown": -0.08372470058799053,
+          "max_drawdown_rupees": -89261.60847671912,
+          "sharpe": 0.5400764059430226,
+          "n_trades": "7",
+          "n_round_trips": "4",
+          "win_rate": 0.5,
+          "total_costs": 7219.862000764669,
+          "interest_earned": 63454.50121568434,
+          "time_in_market": 0.525305410122164
+        }
+      },
+      "tuned_short": {
+        "rulebook": {
+          "buy_threshold": 0.6,
+          "sell_threshold": 0.6,
+          "confirm_days": 3,
+          "sizing": "scaled",
+          "strong_margin": 0.15,
+          "stop_loss": null,
+          "cooldown_days": 5,
+          "on_sell": "short",
+          "name": "buy0.6|sell0.6|confirm3|scaled|nostop|cool5|short"
+        },
+        "drawdown_constraint_satisfied": true,
+        "validation": {
+          "initial_capital": 1000000.0,
+          "final_capital": 1298208.4499731727,
+          "net_profit": 298208.44997317274,
+          "total_return": 0.29820844997317275,
+          "cagr": 0.12162534114956669,
+          "max_drawdown": -0.1464965305611019,
+          "max_drawdown_rupees": -168515.35405581514,
+          "sharpe": 0.5596172025104563,
+          "n_trades": "22",
+          "n_round_trips": "3",
+          "win_rate": 0.6666666666666666,
+          "total_costs": 17170.977905558353,
+          "interest_earned": 145290.13253058025,
+          "time_in_market": 0.9284467713787086
+        }
+      }
+    }
+  }
+}

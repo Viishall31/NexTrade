@@ -1,0 +1,194 @@
+# Single source of truth for every parameter in the Technical Specification.
+# Later steps (features, HMM, models, tuning, backtest) add their sections here.
+
+seed: 42
+
+data:
+  train_csv: "C:/Users/bhojw/Desktop/Capstone Project/Nifty50_train.csv"
+  test_csv: "C:/Users/bhojw/Desktop/Capstone Project/Nifty50_test.csv"   # held out, processed later
+  processed_dir: data/processed
+  bar_minutes: 15
+  session_start: "09:15"          # first bar start (IST)
+  session_last_bar: "15:15"       # last bar start (bar closes 15:30)
+  max_ffill_gap: 1                # forward-fill isolated single-bar gaps only; longer gaps drop the day
+  # Vendor-computed columns. Dropped: they restart at export-chunk boundaries
+  # (duplicate days carry different 200_EMA values), so they are not reliable.
+  # All indicators are recomputed in Step 2.
+  drop_columns: ["pivot", "200_EMA", "Supertrend(12,3)", "Supertrend(11,2)", "Supertrend(10,1)"]
+  return_outlier_flag: 0.05       # |15-min log return| above this is flagged (not removed)
+
+# Time-ordered split applied to both the daily and the 15-min series (never shuffled).
+# Final test = Nifty50_test.csv (May 2024 - Apr 2025), touched once at the very end.
+split:
+  train_end: "2021-12-31"
+  val_start: "2022-01-01"
+  val_end: "2024-04-30"
+
+features:
+  # Decisions (Step 2): no volume in the data -> OBV slope and VWAP deviation dropped;
+  # India VIX not used. 13 model features per timestep.
+  rsi_period: 14
+  macd: {fast: 12, slow: 26, signal: 9}
+  ema_periods: [20, 50, 200]
+  atr_period: 14
+  adx_period: 14
+  bollinger: {period: 20, std: 2}
+  stoch_rsi: {period: 14, smooth_k: 3, smooth_d: 3}
+  realized_vol_windows: [20, 60]   # HMM inputs, not classifier features
+  hmm_return_window: 20            # trailing log return (ret20) -- HMM input, not a classifier feature
+  warmup_bars: 200                 # drop until the longest indicator (EMA 200) has settled
+  periods_per_year: {daily: 252, "15min": 6300}   # 252 days x 25 bars
+  model_columns: [rsi, macd, macd_signal, macd_hist, close_ema20, close_ema50, close_ema200,
+                  atr_norm, adx, bb_pctb, bb_width, stochrsi_k, stochrsi_d]
+
+hmm:
+  n_states: 4
+  bic_check_states: [3, 4, 5]
+  covariance_type: full
+  # Deviation from spec (which used the 1-day log return): a single day's return is mostly
+  # noise, so the HMM split days by volatility only and labelled 2023 'sideways' and H1-2022
+  # 'bull'. The trailing 20-day return gives directional states that match known periods.
+  # Comparison of alternatives is recorded in reports/03_hmm.md.
+  emissions: [ret20, rv20]         # 20-day log return, 20-day annualised realised vol
+  n_init: 10                       # random restarts, keep highest train log-likelihood
+  n_iter: 1000
+  tol: 1.0e-4
+  # Labels come from the forward (filtered) posterior p(state_t | obs_1..t), not the smoothed
+  # one, so a label never depends on later days and is reproducible live.
+  posterior: filtered
+  # 15-min bars inherit the label of their trading day (decision: Step 3, option A).
+  label_names: [bull, bear, sideways, high_vol]
+
+sequence:
+  # Sample = window of `window` bars ending at bar t; target = HMM regime at bar t+1.
+  # A sample belongs to the split of its target bar.
+  daily: {window: 30}
+  15min: {window: 48}
+  classes: [bull, bear, sideways, high_vol]    # class index order
+
+models:   # Spec section 6 defaults (Optuna searches around these in Step 6)
+  lstm:
+    hidden: 64
+    layers: 2
+    dropout: 0.2
+    dense: 32
+    head_dropout: 0.3
+  cnn_bilstm_attn:
+    conv_filters: [64, 128]
+    kernel: 3
+    pool: 2
+    hidden: 64          # per direction
+    dropout: 0.2
+    attn_dim: 64        # additive (Bahdanau) attention size
+    dense: 32
+    head_dropout: 0.3
+  transformer:
+    d_model: 64
+    layers: 2
+    heads: 4
+    ff_dim: 128
+    dropout: 0.1
+    dense: 32
+
+training:
+  lr: 1.0e-3
+  batch_size: 32
+  max_epochs: 100
+  patience: 10          # early stopping on validation macro-F1, best weights restored
+  n_seeds: 5
+
+backtest:   # Spec section 9.2 -- regime-conditioned strategy
+  exposure: {bull: 1.0, sideways: 0.5, high_vol: 0.25, bear: 0.0}
+  cost_bps: 5                 # charged on every change in exposure: cost = 5 bps x |delta exposure|
+  risk_free_annual: 0.06
+  cash_earns_risk_free: true  # the uninvested fraction earns the risk-free rate (so 100% cash => Sharpe 0)
+  rebalance_every: {daily: 1, "15min": 48}   # in samples (bars)
+  periods_per_year: {daily: 252, "15min": 6300}
+
+tuning:   # Spec section 8
+  n_trials: 50
+  sampler_seed: 42                # Optuna TPE sampler
+  pruner: {n_startup_trials: 5, n_warmup_steps: 10}   # median pruner on the per-epoch objective
+  objective:
+    f1_weight: 0.6
+    sharpe_weight: 0.4
+    sharpe_range: [-1.0, 2.0]     # normalised Sharpe = clip((S - low) / (high - low), 0, 1)
+  # Each trial trains one seed. Seed noise is ~±0.05 macro-F1, so the top_k trials are re-run
+  # with training.n_seeds seeds and the config with the best mean objective wins.
+  rerun_top_k: 3
+  threads_per_study: 4            # torch CPU threads per architecture process (3 run in parallel)
+  search_space:
+    lr: [1.0e-4, 1.0e-2]          # log-uniform, all
+    batch_size: [16, 32, 64, 128] # all
+    dropout: [0.1, 0.5]           # all (used for both recurrent and head dropout)
+    layers: [1, 3]                # LSTM layers; CNN-BiLSTM-Attention conv layers
+    hidden: [32, 64, 128, 256]    # LSTM units / BiLSTM units per direction / Transformer d_model
+    heads: [2, 4, 8]              # Transformer only: CNN-BiLSTM-Attention uses additive attention (spec 6.2), which has no heads
+    ff_dim: [64, 128, 256]        # Transformer only
+    conv_filters: [64, 128, 128]  # widths of conv layers 1..3 (the first `layers` are used)
+
+selection:   # Spec 9.3, applied to validation results only (reports/07_selection.json)
+  f1_tolerance: 0.02
+  # Decided before test evaluation: the deployed model averages the softmax outputs of the
+  # selected architecture's 5 tuned seeds (used for the test report and the Step 9 replay).
+  deploy: seed_ensemble
+  low_confidence_threshold: 0.5   # spec section 10: predictions below this are flagged
+
+replay:   # Step 9: walk-forward replay of Nifty50_test.csv as a simulated live feed (replaces Kite live validation)
+  feature_buffer_bars: 2000   # trailing bars used to recompute features per bar; EMA-200 memory after 2000 bars < 1e-8
+  db: data/replay/replay.db   # SQLite log of every prediction and every daily label (spec EI-3 / NFR-5)
+
+trading:   # Step 10: rule-based trading in rupees (requested by the project guide)
+  initial_capital: 1000000        # Rs 10,00,000
+  cash_yield_annual: 0.06         # idle cash parked in a liquid fund / liquid ETF
+  min_trade: 0.25                 # only rebalance when target exposure differs by >= 25% of equity
+  # All-in cost assumptions (brokerage, statutory charges, exchange fees, GST, stamp duty, bid-ask slippage).
+  # Approximate -- verify with a broker's brokerage calculator before relying on the rupee figures.
+  instruments:
+    long_only:  {label: "Nifty 50 ETF + cash", funded: true, cost_rate: 0.0010, fixed_cost_per_sell: 15.93, roll_cost_rate: 0.0}
+    long_short: {label: "Nifty futures, idealized (no lot size, spot price)", funded: false, cost_rate: 0.0003, fixed_cost_per_sell: 0.0, roll_cost_rate: 0.0006}
+  exposure_maps:                  # target exposure per confirmed regime (+1 = fully long, -1 = fully short)
+    long_only:
+      spec:          {weights: {bull: 1.0, sideways: 0.5, high_vol: 0.25, bear: 0.0}}
+      risk_off:      {weights: {bull: 1.0, sideways: 1.0, high_vol: 0.0, bear: 0.0}}
+      bull_only:     {weights: {bull: 1.0, sideways: 0.0, high_vol: 0.0, bear: 0.0}}
+      prob_weighted: {weights: {bull: 1.0, sideways: 0.5, high_vol: 0.25, bear: 0.0}, probability_weighted: true}
+    long_short:
+      ls_spec:          {weights: {bull: 1.0, sideways: 0.5, high_vol: 0.0, bear: -1.0}}
+      ls_risk_off:      {weights: {bull: 1.0, sideways: 1.0, high_vol: -0.5, bear: -1.0}}
+      ls_prob_weighted: {weights: {bull: 1.0, sideways: 0.5, high_vol: 0.0, bear: -1.0}, probability_weighted: true}
+  # confirm: regime maps switch only after N consecutive identical predictions; probability maps use an EMA of span N
+  confirm: {daily: [1, 2, 3], "15min": [1, 4, 12]}
+  min_confidence: [0.0, 0.6]      # predictions below this do not count towards confirmation (regime maps only)
+  stop_loss: [null, 0.05]         # trailing stop from the position's peak equity; re-entry only after the regime changes
+  # Selection on validation only: maximise final capital subject to max drawdown no worse than buy & hold's.
+
+rulebook:   # Step 11 (Experiment 2, post-hoc): probability-based trading rules. See reports/11_rulebook.md
+  # Default parameters, fixed a priori (not tuned):
+  default:
+    buy_threshold: 0.60     # BUY when P(bull) >= 0.60 ...
+    sell_threshold: 0.50    # SELL when P(bear) + P(high_vol) >= 0.50 ...
+    confirm_days: 2         # ... for this many consecutive days
+    sizing: scaled          # scaled: 100% if P(bull) >= buy_threshold + strong_margin, else 50%; full: always 100%
+    strong_margin: 0.15
+    stop_loss: 0.08         # trailing: exit if the portfolio falls 8% below its peak since entry
+    cooldown_days: 5        # no new entry for 5 trading days after any exit
+    on_sell: cash           # cash (Nifty ETF, realistic) | short (Nifty futures, idealized)
+  # Search space for the validation-tuned version (same selection rule as Step 10):
+  grid:
+    buy_threshold: [0.5, 0.6, 0.7]
+    sell_threshold: [0.4, 0.5, 0.6]
+    confirm_days: [1, 2, 3]
+    sizing: [full, scaled]
+    stop_loss: [null, 0.05, 0.08]
+    cooldown_days: [0, 5]
+    on_sell: [cash, short]
+
+fresh:   # Step 12: forward test on data that did not exist in the project files (after Nifty50_test.csv ends)
+  source: yfinance
+  ticker: "^NSEI"
+  history_start: "2015-01-01"
+  test_end: "2025-04-07"            # last day of Nifty50_test.csv; everything after is "fresh"
+  raw_csv: data/raw/yfinance_nsei_daily.csv   # cached download (reused unless --refresh) for reproducibility
+  special_sessions: ["2025-10-21"]  # NSE Diwali Muhurat trading 2025 (one-hour evening session) -> dropped, as in Step 1
+  low_volume_warning_ratio: 0.3     # days with volume < 30% of the 20-day median are only reported (yfinance volume glitches, e.g. 2025-11-03)

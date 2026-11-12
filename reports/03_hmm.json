@@ -1,0 +1,123 @@
+{
+  "state_stats_train": [
+    {
+      "state": 0,
+      "ret20": 0.0032,
+      "rv20": 0.20906,
+      "days": 284,
+      "regime": "bear"
+    },
+    {
+      "state": 1,
+      "ret20": -0.08552,
+      "rv20": 0.55622,
+      "days": 54,
+      "regime": "high_vol"
+    },
+    {
+      "state": 2,
+      "ret20": 0.024,
+      "rv20": 0.09272,
+      "days": 609,
+      "regime": "bull"
+    },
+    {
+      "state": 3,
+      "ret20": 0.01183,
+      "rv20": 0.13806,
+      "days": 503,
+      "regime": "sideways"
+    }
+  ],
+  "transition_matrix": [
+    [
+      0.968,
+      0.004,
+      0.0,
+      0.029
+    ],
+    [
+      0.019,
+      0.981,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.985,
+      0.015
+    ],
+    [
+      0.016,
+      0.0,
+      0.017,
+      0.967
+    ]
+  ],
+  "bic": [
+    {
+      "k": 3,
+      "log_likelihood": -1639.1,
+      "bic": 3445.6
+    },
+    {
+      "k": 4,
+      "log_likelihood": -1143.8,
+      "bic": 2542.3
+    },
+    {
+      "k": 5,
+      "log_likelihood": -827.4,
+      "bic": 2011.5
+    }
+  ],
+  "bic_best_k": 5,
+  "label_share": {
+    "train": {
+      "bull": 0.42,
+      "sideways": 0.347,
+      "bear": 0.196,
+      "high_vol": 0.037
+    },
+    "val": {
+      "bull": 0.483,
+      "sideways": 0.318,
+      "bear": 0.18,
+      "high_vol": 0.019
+    }
+  },
+  "mean_regime_duration_days": {
+    "bear": 24.2,
+    "bull": 40.3,
+    "high_vol": 32.5,
+    "sideways": 19.6
+  },
+  "switches_per_year": 9.3,
+  "check_2020_feb_apr": {
+    "high_vol": 0.688,
+    "bear": 0.208,
+    "sideways": 0.104
+  },
+  "check_2021": {
+    "bull": 0.39,
+    "bear": 0.378,
+    "sideways": 0.232
+  },
+  "check_2022_h1": {
+    "bear": 0.65,
+    "sideways": 0.22,
+    "high_vol": 0.089,
+    "bull": 0.041
+  },
+  "check_2018_sep_oct": {
+    "bear": 0.462,
+    "sideways": 0.282,
+    "bull": 0.256
+  },
+  "check_2023": {
+    "bull": 0.722,
+    "sideways": 0.278
+  },
+  "rows_15min_labelled": 50575
+}

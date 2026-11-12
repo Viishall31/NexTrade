@@ -1,0 +1,2404 @@
+{
+  "evaluated_at": "2026-09-17T00:18:03",
+  "selected": "transformer",
+  "period": [
+    "2024-05-02",
+    "2025-04-07"
+  ],
+  "n_test": 232,
+  "test_label_counts": {
+    "bull": 61,
+    "bear": 20,
+    "sideways": 151,
+    "high_vol": 0
+  },
+  "models": {
+    "lstm/default": {
+      "per_seed": [
+        {
+          "seed": 42,
+          "accuracy": 0.7370689655172413,
+          "macro_f1": 0.38539296549108837,
+          "macro_f1_present": 0.5138572873214512,
+          "per_class": {
+            "bull": {
+              "precision": 0.6385542168674698,
+              "recall": 0.8688524590163934,
+              "f1": 0.7361111111111112,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8309859154929577,
+              "recall": 0.7814569536423841,
+              "f1": 0.8054607508532423,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              53,
+              0,
+              8,
+              0
+            ],
+            [
+              4,
+              0,
+              16,
+              0
+            ],
+            [
+              26,
+              7,
+              118,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.7612836558830799,
+          "sortino": -0.9666804014222259,
+          "max_drawdown": -0.12754369879942773,
+          "cumulative_return": -0.03774033046467329,
+          "annualized_return": -0.0409263402756882,
+          "annualized_volatility": 0.12167131273617611,
+          "avg_exposure": 0.6637931034482759,
+          "total_turnover": 7.0,
+          "cost_drag": 0.0035000000000000005
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.7586206896551724,
+          "macro_f1": 0.48409916055971625,
+          "macro_f1_present": 0.645465547412955,
+          "per_class": {
+            "bull": {
+              "precision": 0.6282051282051282,
+              "recall": 0.8032786885245902,
+              "f1": 0.7050359712230215,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.6666666666666666,
+              "recall": 0.3,
+              "f1": 0.41379310344827586,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8344827586206897,
+              "recall": 0.8013245033112583,
+              "f1": 0.8175675675675675,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              49,
+              0,
+              12,
+              0
+            ],
+            [
+              2,
+              6,
+              12,
+              0
+            ],
+            [
+              27,
+              3,
+              121,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.6978289431886971,
+          "sortino": -0.8944799366164253,
+          "max_drawdown": -0.10540614696710571,
+          "cumulative_return": -0.027213657464981722,
+          "annualized_return": -0.029524697642285602,
+          "annualized_volatility": 0.11666427552095114,
+          "avg_exposure": 0.6487068965517241,
+          "total_turnover": 8.5,
+          "cost_drag": 0.00425
+        },
+        {
+          "seed": 44,
+          "accuracy": 0.7974137931034483,
+          "macro_f1": 0.4155309913183929,
+          "macro_f1_present": 0.5540413217578571,
+          "per_class": {
+            "bull": {
+              "precision": 0.7727272727272727,
+              "recall": 0.8360655737704918,
+              "f1": 0.8031496062992126,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8322981366459627,
+              "recall": 0.8874172185430463,
+              "f1": 0.8589743589743589,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              51,
+              0,
+              10,
+              0
+            ],
+            [
+              3,
+              0,
+              17,
+              0
+            ],
+            [
+              12,
+              5,
+              134,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.4842108919881914,
+          "sortino": -0.6244352801300216,
+          "max_drawdown": -0.09129205743322777,
+          "cumulative_return": -0.0029481486430555925,
+          "annualized_return": -0.0032018920888166047,
+          "annualized_volatility": 0.11359454198808407,
+          "avg_exposure": 0.6314655172413793,
+          "total_turnover": 6.5,
+          "cost_drag": 0.0032500000000000003
+        },
+        {
+          "seed": 45,
+          "accuracy": 0.7370689655172413,
+          "macro_f1": 0.4675528969628425,
+          "macro_f1_present": 0.6234038626171233,
+          "per_class": {
+            "bull": {
+              "precision": 0.6625,
+              "recall": 0.8688524590163934,
+              "f1": 0.75177304964539,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.30434782608695654,
+              "recall": 0.35,
+              "f1": 0.32558139534883723,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8604651162790697,
+              "recall": 0.7350993377483444,
+              "f1": 0.7928571428571428,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              53,
+              0,
+              8,
+              0
+            ],
+            [
+              3,
+              7,
+              10,
+              0
+            ],
+            [
+              24,
+              16,
+              111,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.7272917019607053,
+          "sortino": -0.9185543420359396,
+          "max_drawdown": -0.10676933895129759,
+          "cumulative_return": -0.03310955271529814,
+          "annualized_return": -0.03591197325476747,
+          "annualized_volatility": 0.12039748528319212,
+          "avg_exposure": 0.6228448275862069,
+          "total_turnover": 10.0,
+          "cost_drag": 0.005
+        },
+        {
+          "seed": 46,
+          "accuracy": 0.7844827586206896,
+          "macro_f1": 0.4002329192546584,
+          "macro_f1_present": 0.5336438923395446,
+          "per_class": {
+            "bull": {
+              "precision": 0.7627118644067796,
+              "recall": 0.7377049180327869,
+              "f1": 0.75,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8011695906432749,
+              "recall": 0.9072847682119205,
+              "f1": 0.8509316770186336,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              45,
+              0,
+              16,
+              0
+            ],
+            [
+              2,
+              0,
+              18,
+              0
+            ],
+            [
+              12,
+              2,
+              137,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.5533717431236714,
+          "sortino": -0.7085413613222058,
+          "max_drawdown": -0.09258225720380608,
+          "cumulative_return": -0.009533214558925862,
+          "annualized_return": -0.010350775951126323,
+          "annualized_volatility": 0.11260399052494786,
+          "avg_exposure": 0.6228448275862069,
+          "total_turnover": 5.5,
+          "cost_drag": 0.0027500000000000003
+        }
+      ],
+      "mean": {
+        "accuracy": 0.7629310344827586,
+        "macro_f1": 0.4305617867173397,
+        "macro_f1_present": 0.5740823822897863,
+        "sharpe": -0.644797387228869,
+        "sortino": -0.8225382643053635,
+        "max_drawdown": -0.10471869987097297,
+        "cumulative_return": -0.022108980769386923,
+        "avg_exposure": 0.6379310344827587
+      },
+      "std": {
+        "accuracy": 0.024534912880616756,
+        "macro_f1": 0.03852422629462211,
+        "macro_f1_present": 0.05136563505949615,
+        "sharpe": 0.10708256583525728,
+        "sortino": 0.13222082537877292,
+        "max_drawdown": 0.013063125567766593,
+        "cumulative_return": 0.013540286438282402,
+        "avg_exposure": 0.016012220362936844
+      }
+    },
+    "cnn_bilstm_attn/default": {
+      "per_seed": [
+        {
+          "seed": 42,
+          "accuracy": 0.8362068965517241,
+          "macro_f1": 0.43106608288361675,
+          "macro_f1_present": 0.5747547771781557,
+          "per_class": {
+            "bull": {
+              "precision": 0.8360655737704918,
+              "recall": 0.8360655737704918,
+              "f1": 0.8360655737704918,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8362573099415205,
+              "recall": 0.9470198675496688,
+              "f1": 0.8881987577639752,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              51,
+              0,
+              10,
+              0
+            ],
+            [
+              2,
+              0,
+              18,
+              0
+            ],
+            [
+              8,
+              0,
+              143,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.4960453120140289,
+          "sortino": -0.6383341318607024,
+          "max_drawdown": -0.09168575868659312,
+          "cumulative_return": -0.003910230981649332,
+          "annualized_return": -0.004246603143010841,
+          "annualized_volatility": 0.113108596019899,
+          "avg_exposure": 0.6314655172413793,
+          "total_turnover": 4.5,
+          "cost_drag": 0.0022500000000000003
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.771551724137931,
+          "macro_f1": 0.3974829931972789,
+          "macro_f1_present": 0.5299773242630386,
+          "per_class": {
+            "bull": {
+              "precision": 0.6404494382022472,
+              "recall": 0.9344262295081968,
+              "f1": 0.76,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8531468531468531,
+              "recall": 0.8079470198675497,
+              "f1": 0.8299319727891157,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              57,
+              0,
+              4,
+              0
+            ],
+            [
+              3,
+              0,
+              17,
+              0
+            ],
+            [
+              29,
+              0,
+              122,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.8739864675669635,
+          "sortino": -1.092451177161188,
+          "max_drawdown": -0.13650303819412257,
+          "cumulative_return": -0.04937239360922152,
+          "annualized_return": -0.053512748155119194,
+          "annualized_volatility": 0.12116054651979169,
+          "avg_exposure": 0.6918103448275862,
+          "total_turnover": 6.0,
+          "cost_drag": 0.003
+        },
+        {
+          "seed": 44,
+          "accuracy": 0.7543103448275862,
+          "macro_f1": 0.39415224913494806,
+          "macro_f1_present": 0.5255363321799308,
+          "per_class": {
+            "bull": {
+              "precision": 0.6404494382022472,
+              "recall": 0.9344262295081968,
+              "f1": 0.76,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.855072463768116,
+              "recall": 0.7814569536423841,
+              "f1": 0.8166089965397924,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              57,
+              0,
+              4,
+              0
+            ],
+            [
+              4,
+              0,
+              16,
+              0
+            ],
+            [
+              28,
+              5,
+              118,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.5639304535205264,
+          "sortino": -0.7215679782810428,
+          "max_drawdown": -0.12435170154710773,
+          "cumulative_return": -0.01589510977935993,
+          "annualized_return": -0.01725349105410634,
+          "annualized_volatility": 0.12113399502156344,
+          "avg_exposure": 0.6810344827586207,
+          "total_turnover": 6.0,
+          "cost_drag": 0.003
+        },
+        {
+          "seed": 45,
+          "accuracy": 0.8275862068965517,
+          "macro_f1": 0.42940837273670857,
+          "macro_f1_present": 0.572544496982278,
+          "per_class": {
+            "bull": {
+              "precision": 0.7261904761904762,
+              "recall": 1.0,
+              "f1": 0.8413793103448276,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8851351351351351,
+              "recall": 0.8675496688741722,
+              "f1": 0.8762541806020067,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              61,
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              17,
+              0
+            ],
+            [
+              20,
+              0,
+              131,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.4708268249457052,
+          "sortino": -0.606673577330314,
+          "max_drawdown": -0.10315031261355334,
+          "cumulative_return": -0.002441733420782577,
+          "annualized_return": -0.002651948333990961,
+          "annualized_volatility": 0.11525022756041227,
+          "avg_exposure": 0.6810344827586207,
+          "total_turnover": 4.5,
+          "cost_drag": 0.0022500000000000003
+        },
+        {
+          "seed": 46,
+          "accuracy": 0.8362068965517241,
+          "macro_f1": 0.4305555555555556,
+          "macro_f1_present": 0.5740740740740741,
+          "per_class": {
+            "bull": {
+              "precision": 0.847457627118644,
+              "recall": 0.819672131147541,
+              "f1": 0.8333333333333334,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8323699421965318,
+              "recall": 0.9536423841059603,
+              "f1": 0.8888888888888888,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              50,
+              0,
+              11,
+              0
+            ],
+            [
+              2,
+              0,
+              18,
+              0
+            ],
+            [
+              7,
+              0,
+              144,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.6738557576955346,
+          "sortino": -0.8553747714723384,
+          "max_drawdown": -0.09168575868659234,
+          "cumulative_return": -0.021021188647163513,
+          "annualized_return": -0.022812537280253342,
+          "annualized_volatility": 0.11146263518070057,
+          "avg_exposure": 0.6271551724137931,
+          "total_turnover": 4.5,
+          "cost_drag": 0.0022500000000000003
+        }
+      ],
+      "mean": {
+        "accuracy": 0.8051724137931033,
+        "macro_f1": 0.41653305070162167,
+        "macro_f1_present": 0.5553774009354955,
+        "sharpe": -0.6157289631485516,
+        "sortino": -0.7828803272211171,
+        "max_drawdown": -0.10947531394559382,
+        "cumulative_return": -0.018528131287635374,
+        "avg_exposure": 0.6625
+      },
+      "std": {
+        "accuracy": 0.03505982656493577,
+        "macro_f1": 0.01695534460855505,
+        "macro_f1_present": 0.022607126144740055,
+        "sharpe": 0.14702350454064464,
+        "sortino": 0.17708256888395987,
+        "max_drawdown": 0.018026352823582514,
+        "cumulative_return": 0.01695270987842469,
+        "avg_exposure": 0.0274173170582573
+      }
+    },
+    "transformer/default": {
+      "per_seed": [
+        {
+          "seed": 42,
+          "accuracy": 0.8362068965517241,
+          "macro_f1": 0.5514504806469958,
+          "macro_f1_present": 0.7352673075293277,
+          "per_class": {
+            "bull": {
+              "precision": 0.875,
+              "recall": 0.6885245901639344,
+              "f1": 0.7706422018348624,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.8888888888888888,
+              "recall": 0.4,
+              "f1": 0.5517241379310345,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8228571428571428,
+              "recall": 0.9536423841059603,
+              "f1": 0.8834355828220859,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              42,
+              0,
+              19,
+              0
+            ],
+            [
+              0,
+              8,
+              12,
+              0
+            ],
+            [
+              6,
+              1,
+              144,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -1.0981535794075112,
+          "sortino": -1.385957380563951,
+          "max_drawdown": -0.09864253029304693,
+          "cumulative_return": -0.03723816894864962,
+          "annualized_return": -0.04038268271823231,
+          "annualized_volatility": 0.08714459572259506,
+          "avg_exposure": 0.584051724137931,
+          "total_turnover": 7.0,
+          "cost_drag": 0.0034999999999999996
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.8448275862068966,
+          "macro_f1": 0.4417496974846168,
+          "macro_f1_present": 0.5889995966461558,
+          "per_class": {
+            "bull": {
+              "precision": 0.8833333333333333,
+              "recall": 0.8688524590163934,
+              "f1": 0.8760330578512396,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8411764705882353,
+              "recall": 0.9470198675496688,
+              "f1": 0.8909657320872274,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              53,
+              0,
+              8,
+              0
+            ],
+            [
+              1,
+              0,
+              19,
+              0
+            ],
+            [
+              6,
+              2,
+              143,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.688024852478197,
+          "sortino": -0.859600915851461,
+          "max_drawdown": -0.09657677716660962,
+          "cumulative_return": -0.021241151687703907,
+          "annualized_return": -0.023051023153150663,
+          "annualized_volatility": 0.10978263281034331,
+          "avg_exposure": 0.625,
+          "total_turnover": 6.5,
+          "cost_drag": 0.0032500000000000003
+        },
+        {
+          "seed": 44,
+          "accuracy": 0.7068965517241379,
+          "macro_f1": 0.41645376284365454,
+          "macro_f1_present": 0.5552716837915393,
+          "per_class": {
+            "bull": {
+              "precision": 0.855072463768116,
+              "recall": 0.9672131147540983,
+              "f1": 0.9076923076923077,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8333333333333334,
+              "recall": 0.695364238410596,
+              "f1": 0.7581227436823105,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              59,
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              0,
+              19,
+              0
+            ],
+            [
+              9,
+              37,
+              105,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.8294027832772711,
+          "sortino": -1.0265749207896013,
+          "max_drawdown": -0.10582797347776873,
+          "cumulative_return": -0.03273036149829622,
+          "annualized_return": -0.03550127998532859,
+          "annualized_volatility": 0.10690531643318284,
+          "avg_exposure": 0.5689655172413793,
+          "total_turnover": 7.5,
+          "cost_drag": 0.00375
+        },
+        {
+          "seed": 45,
+          "accuracy": 0.8146551724137931,
+          "macro_f1": 0.4175925925925926,
+          "macro_f1_present": 0.5567901234567901,
+          "per_class": {
+            "bull": {
+              "precision": 0.8135593220338984,
+              "recall": 0.7868852459016393,
+              "f1": 0.8,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.815028901734104,
+              "recall": 0.9337748344370861,
+              "f1": 0.8703703703703703,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              48,
+              0,
+              13,
+              0
+            ],
+            [
+              1,
+              0,
+              19,
+              0
+            ],
+            [
+              10,
+              0,
+              141,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.9991224439478542,
+          "sortino": -1.2272993705302506,
+          "max_drawdown": -0.10812264620347967,
+          "cumulative_return": -0.052251707747348886,
+          "annualized_return": -0.056626250501360165,
+          "annualized_volatility": 0.11051428716947612,
+          "avg_exposure": 0.6271551724137931,
+          "total_turnover": 7.5,
+          "cost_drag": 0.0037500000000000003
+        },
+        {
+          "seed": 46,
+          "accuracy": 0.7931034482758621,
+          "macro_f1": 0.4706647293732359,
+          "macro_f1_present": 0.6275529724976479,
+          "per_class": {
+            "bull": {
+              "precision": 0.8301886792452831,
+              "recall": 0.7213114754098361,
+              "f1": 0.7719298245614035,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.36363636363636365,
+              "recall": 0.2,
+              "f1": 0.25806451612903225,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8095238095238095,
+              "recall": 0.9006622516556292,
+              "f1": 0.8526645768025078,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              44,
+              0,
+              17,
+              0
+            ],
+            [
+              1,
+              4,
+              15,
+              0
+            ],
+            [
+              8,
+              7,
+              136,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.7734293334283525,
+          "sortino": -0.9401257507422998,
+          "max_drawdown": -0.09086839035436767,
+          "cumulative_return": -0.025142634723067214,
+          "annualized_return": -0.027280276907495904,
+          "annualized_volatility": 0.10404615468576557,
+          "avg_exposure": 0.5905172413793104,
+          "total_turnover": 10.5,
+          "cost_drag": 0.00525
+        }
+      ],
+      "mean": {
+        "accuracy": 0.7991379310344827,
+        "macro_f1": 0.4595822525882191,
+        "macro_f1_present": 0.6127763367842921,
+        "sharpe": -0.8776265985078371,
+        "sortino": -1.0879116676955127,
+        "max_drawdown": -0.10000766349905452,
+        "cumulative_return": -0.03372080492101317,
+        "avg_exposure": 0.5991379310344829
+      },
+      "std": {
+        "accuracy": 0.04949206929105975,
+        "macro_f1": 0.05000758105341263,
+        "macro_f1_present": 0.06667677473788353,
+        "sharpe": 0.1500165445988102,
+        "sortino": 0.19286723508107778,
+        "max_drawdown": 0.006275186624331353,
+        "cumulative_return": 0.010826577817613335,
+        "avg_exposure": 0.023091543510308402
+      }
+    },
+    "lstm/tuned": {
+      "per_seed": [
+        {
+          "seed": 42,
+          "accuracy": 0.7844827586206896,
+          "macro_f1": 0.46253945075133074,
+          "macro_f1_present": 0.616719267668441,
+          "per_class": {
+            "bull": {
+              "precision": 0.654320987654321,
+              "recall": 0.8688524590163934,
+              "f1": 0.7464788732394366,
+              "support": 61
+            },
+            "bear": {
+              "precision": 1.0,
+              "recall": 0.15,
+              "f1": 0.2608695652173913,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8513513513513513,
+              "recall": 0.8344370860927153,
+              "f1": 0.842809364548495,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              53,
+              0,
+              8,
+              0
+            ],
+            [
+              3,
+              3,
+              14,
+              0
+            ],
+            [
+              25,
+              0,
+              126,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.9179460266278516,
+          "sortino": -1.1481877915216,
+          "max_drawdown": -0.12245735089484922,
+          "cumulative_return": -0.05297665541613572,
+          "annualized_return": -0.05741003319144722,
+          "annualized_volatility": 0.12000410558040872,
+          "avg_exposure": 0.6681034482758621,
+          "total_turnover": 7.0,
+          "cost_drag": 0.0034999999999999996
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.7801724137931034,
+          "macro_f1": 0.49096389042451294,
+          "macro_f1_present": 0.6546185205660172,
+          "per_class": {
+            "bull": {
+              "precision": 0.7121212121212122,
+              "recall": 0.7704918032786885,
+              "f1": 0.7401574803149606,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.5454545454545454,
+              "recall": 0.3,
+              "f1": 0.3870967741935484,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8258064516129032,
+              "recall": 0.847682119205298,
+              "f1": 0.8366013071895425,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              47,
+              0,
+              14,
+              0
+            ],
+            [
+              1,
+              6,
+              13,
+              0
+            ],
+            [
+              18,
+              5,
+              128,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.9119552128877483,
+          "sortino": -1.1364101343478503,
+          "max_drawdown": -0.10223050617592944,
+          "cumulative_return": -0.04233571398345337,
+          "annualized_return": -0.045900325155067034,
+          "annualized_volatility": 0.10888192281677017,
+          "avg_exposure": 0.6185344827586207,
+          "total_turnover": 9.5,
+          "cost_drag": 0.00475
+        },
+        {
+          "seed": 44,
+          "accuracy": 0.8060344827586207,
+          "macro_f1": 0.46922829473113914,
+          "macro_f1_present": 0.6256377263081855,
+          "per_class": {
+            "bull": {
+              "precision": 0.7627118644067796,
+              "recall": 0.7377049180327869,
+              "f1": 0.75,
+              "support": 61
+            },
+            "bear": {
+              "precision": 1.0,
+              "recall": 0.15,
+              "f1": 0.2608695652173913,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8176470588235294,
+              "recall": 0.9205298013245033,
+              "f1": 0.8660436137071651,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              45,
+              0,
+              16,
+              0
+            ],
+            [
+              2,
+              3,
+              15,
+              0
+            ],
+            [
+              12,
+              0,
+              139,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.5927275606078354,
+          "sortino": -0.7613809686005981,
+          "max_drawdown": -0.09233745252816217,
+          "cumulative_return": -0.013005543042903134,
+          "annualized_return": -0.014118759773901202,
+          "annualized_volatility": 0.11172959139872363,
+          "avg_exposure": 0.6206896551724138,
+          "total_turnover": 5.5,
+          "cost_drag": 0.00275
+        },
+        {
+          "seed": 45,
+          "accuracy": 0.7543103448275862,
+          "macro_f1": 0.3976722348522289,
+          "macro_f1_present": 0.5302296464696385,
+          "per_class": {
+            "bull": {
+              "precision": 0.7123287671232876,
+              "recall": 0.8524590163934426,
+              "f1": 0.7761194029850746,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8145695364238411,
+              "recall": 0.8145695364238411,
+              "f1": 0.8145695364238411,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              52,
+              0,
+              9,
+              0
+            ],
+            [
+              1,
+              0,
+              19,
+              0
+            ],
+            [
+              20,
+              8,
+              123,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -1.0339206000926984,
+          "sortino": -1.2702902569704155,
+          "max_drawdown": -0.11126958644507712,
+          "cumulative_return": -0.05643254926896979,
+          "annualized_return": -0.061145687541412475,
+          "annualized_volatility": 0.11134905809855238,
+          "avg_exposure": 0.6400862068965517,
+          "total_turnover": 9.5,
+          "cost_drag": 0.00475
+        },
+        {
+          "seed": 46,
+          "accuracy": 0.7801724137931034,
+          "macro_f1": 0.44101864566018645,
+          "macro_f1_present": 0.5880248608802486,
+          "per_class": {
+            "bull": {
+              "precision": 0.6842105263157895,
+              "recall": 0.8524590163934426,
+              "f1": 0.7591240875912408,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.5,
+              "recall": 0.1,
+              "f1": 0.16666666666666666,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8355263157894737,
+              "recall": 0.8410596026490066,
+              "f1": 0.8382838283828383,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              52,
+              0,
+              9,
+              0
+            ],
+            [
+              2,
+              2,
+              16,
+              0
+            ],
+            [
+              22,
+              2,
+              127,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.7414630035101231,
+          "sortino": -0.9293280859404867,
+          "max_drawdown": -0.11302193093675639,
+          "cumulative_return": -0.032418994342483076,
+          "annualized_return": -0.03516403501569643,
+          "annualized_volatility": 0.1175104153671451,
+          "avg_exposure": 0.6551724137931034,
+          "total_turnover": 8.0,
+          "cost_drag": 0.004
+        }
+      ],
+      "mean": {
+        "accuracy": 0.7810344827586206,
+        "macro_f1": 0.4522845032838796,
+        "macro_f1_present": 0.6030460043785062,
+        "sharpe": -0.8396024807452512,
+        "sortino": -1.04911944747619,
+        "max_drawdown": -0.10826336539615486,
+        "cumulative_return": -0.03943389121078902,
+        "avg_exposure": 0.6405172413793103
+      },
+      "std": {
+        "accuracy": 0.01644722761063699,
+        "macro_f1": 0.031615725254978404,
+        "macro_f1_present": 0.04215430033997118,
+        "sharpe": 0.15473250707043523,
+        "sortino": 0.18082816722124573,
+        "max_drawdown": 0.010229180088220985,
+        "cumulative_return": 0.01567448741401449,
+        "avg_exposure": 0.019247511691177686
+      }
+    },
+    "cnn_bilstm_attn/tuned": {
+      "per_seed": [
+        {
+          "seed": 42,
+          "accuracy": 0.7758620689655172,
+          "macro_f1": 0.5133838383838383,
+          "macro_f1_present": 0.6845117845117844,
+          "per_class": {
+            "bull": {
+              "precision": 0.620253164556962,
+              "recall": 0.8032786885245902,
+              "f1": 0.7,
+              "support": 61
+            },
+            "bear": {
+              "precision": 1.0,
+              "recall": 0.35,
+              "f1": 0.5185185185185185,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8493150684931506,
+              "recall": 0.8211920529801324,
+              "f1": 0.835016835016835,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              49,
+              0,
+              12,
+              0
+            ],
+            [
+              3,
+              7,
+              10,
+              0
+            ],
+            [
+              27,
+              0,
+              124,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.7161330204317942,
+          "sortino": -0.9056157895678295,
+          "max_drawdown": -0.11463036538075722,
+          "cumulative_return": -0.030856747270937235,
+          "annualized_return": -0.03347180796449556,
+          "annualized_volatility": 0.11898069453083943,
+          "avg_exposure": 0.6551724137931034,
+          "total_turnover": 9.0,
+          "cost_drag": 0.0045000000000000005
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.8491379310344828,
+          "macro_f1": 0.5283063705742298,
+          "macro_f1_present": 0.7044084940989731,
+          "per_class": {
+            "bull": {
+              "precision": 0.7142857142857143,
+              "recall": 0.9836065573770492,
+              "f1": 0.8275862068965517,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.8333333333333334,
+              "recall": 0.25,
+              "f1": 0.38461538461538464,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.9295774647887324,
+              "recall": 0.8741721854304636,
+              "f1": 0.9010238907849829,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              60,
+              0,
+              1,
+              0
+            ],
+            [
+              6,
+              5,
+              9,
+              0
+            ],
+            [
+              18,
+              1,
+              132,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.4558504585077032,
+          "sortino": -0.5927717652529763,
+          "max_drawdown": -0.10039228220732377,
+          "cumulative_return": -0.001937847658186942,
+          "annualized_return": -0.002104727568711162,
+          "annualized_volatility": 0.11731269970220083,
+          "avg_exposure": 0.6681034482758621,
+          "total_turnover": 11.5,
+          "cost_drag": 0.00575
+        },
+        {
+          "seed": 44,
+          "accuracy": 0.603448275862069,
+          "macro_f1": 0.3586138774626543,
+          "macro_f1_present": 0.4781518366168724,
+          "per_class": {
+            "bull": {
+              "precision": 0.6477272727272727,
+              "recall": 0.9344262295081968,
+              "f1": 0.7651006711409396,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8556701030927835,
+              "recall": 0.5496688741721855,
+              "f1": 0.6693548387096774,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              57,
+              0,
+              4,
+              0
+            ],
+            [
+              10,
+              0,
+              10,
+              0
+            ],
+            [
+              21,
+              47,
+              83,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.5388008437832558,
+          "sortino": -0.7014152886532435,
+          "max_drawdown": -0.12288914171077425,
+          "cumulative_return": -0.00829980448313239,
+          "annualized_return": -0.009012071456313109,
+          "annualized_volatility": 0.11305303190187165,
+          "avg_exposure": 0.5883620689655172,
+          "total_turnover": 12.5,
+          "cost_drag": 0.00625
+        },
+        {
+          "seed": 45,
+          "accuracy": 0.8189655172413793,
+          "macro_f1": 0.42039473684210527,
+          "macro_f1_present": 0.5605263157894737,
+          "per_class": {
+            "bull": {
+              "precision": 0.7088607594936709,
+              "recall": 0.9180327868852459,
+              "f1": 0.8,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8758169934640523,
+              "recall": 0.8874172185430463,
+              "f1": 0.881578947368421,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              56,
+              0,
+              5,
+              0
+            ],
+            [
+              6,
+              0,
+              14,
+              0
+            ],
+            [
+              17,
+              0,
+              134,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.34250533664798305,
+          "sortino": -0.44705475707064307,
+          "max_drawdown": -0.09934504023148794,
+          "cumulative_return": 0.010564672944167519,
+          "annualized_return": 0.011480629486654292,
+          "annualized_volatility": 0.11682184431641882,
+          "avg_exposure": 0.6702586206896551,
+          "total_turnover": 6.5,
+          "cost_drag": 0.0032500000000000003
+        },
+        {
+          "seed": 46,
+          "accuracy": 0.6982758620689655,
+          "macro_f1": 0.36566097554637356,
+          "macro_f1_present": 0.48754796739516476,
+          "per_class": {
+            "bull": {
+              "precision": 0.6515151515151515,
+              "recall": 0.7049180327868853,
+              "f1": 0.6771653543307087,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.7828947368421053,
+              "recall": 0.7880794701986755,
+              "f1": 0.7854785478547854,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              43,
+              0,
+              18,
+              0
+            ],
+            [
+              5,
+              0,
+              15,
+              0
+            ],
+            [
+              18,
+              14,
+              119,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -0.6060524472428832,
+          "sortino": -0.7688652652486907,
+          "max_drawdown": -0.11171373358015246,
+          "cumulative_return": -0.01783409220987031,
+          "annualized_return": -0.019356541269506145,
+          "annualized_volatility": 0.11704793490949579,
+          "avg_exposure": 0.6120689655172413,
+          "total_turnover": 9.0,
+          "cost_drag": 0.0045000000000000005
+        }
+      ],
+      "mean": {
+        "accuracy": 0.7491379310344828,
+        "macro_f1": 0.4372719597618403,
+        "macro_f1_present": 0.5830292796824537,
+        "sharpe": -0.5318684213227238,
+        "sortino": -0.6831445731586767,
+        "max_drawdown": -0.10979411262209912,
+        "cumulative_return": -0.009672763735591871,
+        "avg_exposure": 0.6387931034482758
+      },
+      "std": {
+        "accuracy": 0.08877217697831725,
+        "macro_f1": 0.07166637934778683,
+        "macro_f1_present": 0.09555517246371577,
+        "sharpe": 0.12739064265149108,
+        "sortino": 0.15561551586964886,
+        "max_drawdown": 0.008900916819900087,
+        "cumulative_return": 0.014047321652838549,
+        "avg_exposure": 0.03278696595816658
+      }
+    },
+    "transformer/tuned": {
+      "per_seed": [
+        {
+          "seed": 42,
+          "accuracy": 0.853448275862069,
+          "macro_f1": 0.6022034231752902,
+          "macro_f1_present": 0.8029378975670536,
+          "per_class": {
+            "bull": {
+              "precision": 0.8448275862068966,
+              "recall": 0.8032786885245902,
+              "f1": 0.8235294117647058,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.6153846153846154,
+              "recall": 0.8,
+              "f1": 0.6956521739130435,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8986486486486487,
+              "recall": 0.8807947019867549,
+              "f1": 0.8896321070234113,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              49,
+              0,
+              12,
+              0
+            ],
+            [
+              1,
+              16,
+              3,
+              0
+            ],
+            [
+              8,
+              10,
+              133,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -1.55454583085286,
+          "sortino": -1.8128971621845986,
+          "max_drawdown": -0.10313639803123043,
+          "cumulative_return": -0.0923872027526429,
+          "annualized_return": -0.09994022459046492,
+          "annualized_volatility": 0.10183694570350406,
+          "avg_exposure": 0.5689655172413793,
+          "total_turnover": 9.5,
+          "cost_drag": 0.00475
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.7586206896551724,
+          "macro_f1": 0.5890203232227095,
+          "macro_f1_present": 0.7853604309636126,
+          "per_class": {
+            "bull": {
+              "precision": 0.5411764705882353,
+              "recall": 0.7540983606557377,
+              "f1": 0.6301369863013698,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.9473684210526315,
+              "recall": 0.9,
+              "f1": 0.9230769230769231,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.875,
+              "recall": 0.7417218543046358,
+              "f1": 0.8028673835125448,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              46,
+              0,
+              15,
+              0
+            ],
+            [
+              1,
+              18,
+              1,
+              0
+            ],
+            [
+              38,
+              1,
+              112,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -1.3882974627644133,
+          "sortino": -1.6995522491384343,
+          "max_drawdown": -0.12923375381846003,
+          "cumulative_return": -0.09268028162642494,
+          "annualized_return": -0.10025591527496713,
+          "annualized_volatility": 0.11340014216017176,
+          "avg_exposure": 0.6422413793103449,
+          "total_turnover": 11.5,
+          "cost_drag": 0.00575
+        },
+        {
+          "seed": 44,
+          "accuracy": 0.875,
+          "macro_f1": 0.6211484593837535,
+          "macro_f1_present": 0.8281979458450047,
+          "per_class": {
+            "bull": {
+              "precision": 0.896551724137931,
+              "recall": 0.8524590163934426,
+              "f1": 0.8739495798319328,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.5806451612903226,
+              "recall": 0.9,
+              "f1": 0.7058823529411765,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.9300699300699301,
+              "recall": 0.8807947019867549,
+              "f1": 0.9047619047619048,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              52,
+              0,
+              9,
+              0
+            ],
+            [
+              1,
+              18,
+              1,
+              0
+            ],
+            [
+              5,
+              13,
+              133,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -1.3934409032786732,
+          "sortino": -1.6932403462215369,
+          "max_drawdown": -0.11668231069104162,
+          "cumulative_return": -0.08415253027531577,
+          "annualized_return": -0.0910666425476041,
+          "annualized_volatility": 0.10625356691365352,
+          "avg_exposure": 0.5581896551724138,
+          "total_turnover": 6.5,
+          "cost_drag": 0.00325
+        },
+        {
+          "seed": 45,
+          "accuracy": 0.7844827586206896,
+          "macro_f1": 0.46010209750288505,
+          "macro_f1_present": 0.6134694633371801,
+          "per_class": {
+            "bull": {
+              "precision": 0.7307692307692307,
+              "recall": 0.9344262295081968,
+              "f1": 0.8201438848920863,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.25,
+              "recall": 0.15,
+              "f1": 0.1875,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.8591549295774648,
+              "recall": 0.8079470198675497,
+              "f1": 0.8327645051194539,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              57,
+              0,
+              4,
+              0
+            ],
+            [
+              1,
+              3,
+              16,
+              0
+            ],
+            [
+              20,
+              9,
+              122,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -1.1852210484155379,
+          "sortino": -1.453457513151604,
+          "max_drawdown": -0.11056018498023612,
+          "cumulative_return": -0.06923721957254925,
+          "annualized_return": -0.07497660677141593,
+          "annualized_volatility": 0.10979814605802275,
+          "avg_exposure": 0.6422413793103449,
+          "total_turnover": 12.5,
+          "cost_drag": 0.00625
+        },
+        {
+          "seed": 46,
+          "accuracy": 0.7370689655172413,
+          "macro_f1": 0.3829665578891585,
+          "macro_f1_present": 0.5106220771855446,
+          "per_class": {
+            "bull": {
+              "precision": 0.8,
+              "recall": 0.6557377049180327,
+              "f1": 0.7207207207207207,
+              "support": 61
+            },
+            "bear": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 20
+            },
+            "sideways": {
+              "precision": 0.7616279069767442,
+              "recall": 0.8675496688741722,
+              "f1": 0.8111455108359134,
+              "support": 151
+            },
+            "high_vol": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 0
+            }
+          },
+          "confusion_matrix": [
+            [
+              40,
+              0,
+              21,
+              0
+            ],
+            [
+              0,
+              0,
+              20,
+              0
+            ],
+            [
+              10,
+              10,
+              131,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "sharpe": -1.1894541695665117,
+          "sortino": -1.4881257019550962,
+          "max_drawdown": -0.11059487957691083,
+          "cumulative_return": -0.046082160322637566,
+          "annualized_return": -0.04995390939424371,
+          "annualized_volatility": 0.08876127819884919,
+          "avg_exposure": 0.5862068965517241,
+          "total_turnover": 6.5,
+          "cost_drag": 0.0032500000000000003
+        }
+      ],
+      "mean": {
+        "accuracy": 0.8017241379310344,
+        "macro_f1": 0.5310881722347593,
+        "macro_f1_present": 0.7081175629796792,
+        "sharpe": -1.3421918829755992,
+        "sortino": -1.629454594530254,
+        "max_drawdown": -0.1140415054195758,
+        "cumulative_return": -0.07690787890991409,
+        "avg_exposure": 0.5995689655172414
+      },
+      "std": {
+        "accuracy": 0.05362872763791654,
+        "macro_f1": 0.09327743971397452,
+        "macro_f1_present": 0.12436991961863271,
+        "sharpe": 0.1398678217094015,
+        "sortino": 0.13680811924614134,
+        "max_drawdown": 0.008725806011449453,
+        "cumulative_return": 0.017606402634143953,
+        "avg_exposure": 0.035970079387974266
+      }
+    }
+  },
+  "references": {
+    "logistic_regression_last_bar": {
+      "accuracy": 0.8146551724137931,
+      "macro_f1": 0.5477174340810704,
+      "macro_f1_present": 0.7302899121080939,
+      "per_class": {
+        "bull": {
+          "precision": 0.8166666666666667,
+          "recall": 0.8032786885245902,
+          "f1": 0.8099173553719008,
+          "support": 61
+        },
+        "bear": {
+          "precision": 0.5,
+          "recall": 0.55,
+          "f1": 0.5238095238095238,
+          "support": 20
+        },
+        "sideways": {
+          "precision": 0.86,
+          "recall": 0.8543046357615894,
+          "f1": 0.8571428571428571,
+          "support": 151
+        },
+        "high_vol": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "confusion_matrix": [
+        [
+          49,
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          11,
+          9,
+          0
+        ],
+        [
+          11,
+          11,
+          129,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "sharpe": -0.8381937476072359,
+      "sortino": -1.1287446017310494,
+      "max_drawdown": -0.104218188704852,
+      "cumulative_return": -0.021633442378586998,
+      "annualized_return": -0.023476336719293167,
+      "annualized_volatility": 0.09275307610816048,
+      "avg_exposure": 0.5818965517241379,
+      "total_turnover": 8.5,
+      "cost_drag": 0.00425
+    },
+    "buy_and_hold": {
+      "sharpe": -0.4632657196909098,
+      "sortino": -0.6097541085648808,
+      "max_drawdown": -0.15715113934862313,
+      "cumulative_return": -0.017659370254232365,
+      "annualized_return": -0.01916704980666528,
+      "annualized_volatility": 0.14487939948678533,
+      "avg_exposure": 1.0,
+      "total_turnover": 1.0,
+      "cost_drag": 0.0005
+    },
+    "hmm_label_oracle": {
+      "sharpe": -0.5875182255171698,
+      "sortino": -0.8210903849407545,
+      "max_drawdown": -0.07721956803065488,
+      "cumulative_return": 0.00858394983320454,
+      "annualized_return": 0.009327386364890167,
+      "annualized_volatility": 0.07820741312584131,
+      "avg_exposure": 0.5883620689655172,
+      "total_turnover": 5.5,
+      "cost_drag": 0.00275
+    },
+    "hmm_label_lagged": {
+      "sharpe": -0.9261569796020632,
+      "sortino": -1.2335017855343535,
+      "max_drawdown": -0.0870718717626584,
+      "cumulative_return": -0.029999810551391004,
+      "annualized_return": -0.03254347364589105,
+      "annualized_volatility": 0.09389869401638208,
+      "avg_exposure": 0.5905172413793104,
+      "total_turnover": 5.5,
+      "cost_drag": 0.00275
+    }
+  },
+  "deployed_seed_ensemble": {
+    "accuracy": 0.8793103448275862,
+    "macro_f1": 0.6273484072349935,
+    "macro_f1_present": 0.8364645429799914,
+    "per_class": {
+      "bull": {
+        "precision": 0.8548387096774194,
+        "recall": 0.8688524590163934,
+        "f1": 0.8617886178861789,
+        "support": 61
+      },
+      "bear": {
+        "precision": 0.6538461538461539,
+        "recall": 0.85,
+        "f1": 0.7391304347826086,
+        "support": 20
+      },
+      "sideways": {
+        "precision": 0.9305555555555556,
+        "recall": 0.8874172185430463,
+        "f1": 0.9084745762711864,
+        "support": 151
+      },
+      "high_vol": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      }
+    },
+    "confusion_matrix": [
+      [
+        53,
+        0,
+        8,
+        0
+      ],
+      [
+        1,
+        17,
+        2,
+        0
+      ],
+      [
+        8,
+        9,
+        134,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "sharpe": -1.3070704138668603,
+    "sortino": -1.5920787095057403,
+    "max_drawdown": -0.10074320054180941,
+    "cumulative_return": -0.07673697392128676,
+    "annualized_return": -0.08306984022927943,
+    "annualized_volatility": 0.10655116862819751,
+    "avg_exposure": 0.5775862068965517,
+    "total_turnover": 7.5,
+    "cost_drag": 0.00375,
+    "confidence": {
+      "mean_confidence": 0.8035092949867249,
+      "low_confidence_share": 0.004310344827586207,
+      "accuracy_high_confidence": 0.8831168831168831,
+      "accuracy_low_confidence": 0.0
+    },
+    "by_true_regime": {
+      "bull": {
+        "days": 61,
+        "recall": 0.8688524590163934,
+        "predicted_as": {
+          "bull": 53,
+          "bear": 0,
+          "sideways": 8,
+          "high_vol": 0
+        },
+        "strategy_mean_daily_return_bps": 3.1301824598121,
+        "buy_hold_mean_daily_return_bps": 4.809536902741055
+      },
+      "bear": {
+        "days": 20,
+        "recall": 0.85,
+        "predicted_as": {
+          "bull": 1,
+          "bear": 17,
+          "sideways": 2,
+          "high_vol": 0
+        },
+        "strategy_mean_daily_return_bps": -25.25501435451193,
+        "buy_hold_mean_daily_return_bps": 18.83457124875959
+      },
+      "sideways": {
+        "days": 151,
+        "recall": 0.8874172185430463,
+        "predicted_as": {
+          "bull": 8,
+          "bear": 9,
+          "sideways": 134,
+          "high_vol": 0
+        },
+        "strategy_mean_daily_return_bps": -2.857629484673837,
+        "buy_hold_mean_daily_return_bps": -4.943548639227453
+      }
+    }
+  },
+  "selected_val_vs_test": {
+    "macro_f1": {
+      "validation": 0.7581220243621255,
+      "test": 0.7081175629796792,
+      "gap": -0.0500044613824463
+    },
+    "sharpe": {
+      "validation": 0.7697340147998454,
+      "test": -1.3421918829755992,
+      "gap": -2.1119258977754445
+    },
+    "max_drawdown": {
+      "validation": -0.065916795331099,
+      "test": -0.1140415054195758,
+      "gap": -0.04812471008847681
+    },
+    "cumulative_return": {
+      "validation": 0.29596475465336264,
+      "test": -0.07690787890991409,
+      "gap": -0.3728726335632767
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "prepared_at": "2026-09-17T02:01:57",
+  "source": "yfinance ^NSEI",
+  "downloaded_at": "2026-09-17T02:01:18",
+  "fresh_period": [
+    "2025-04-08",
+    "2026-09-15"
+  ],
+  "fresh_days": 354,
+  "fresh_decisions": 354,
+  "dropped_incomplete_rows": [
+    "2026-09-16"
+  ],
+  "dropped_special_sessions_fresh": [
+    "2025-10-21"
+  ],
+  "low_volume_days_kept": [
+    "2025-11-03"
+  ],
+  "overlap_check": {
+    "days": 2446,
+    "close_median_abs_diff_pct": 0.02396062254333975,
+    "close_p95_abs_diff_pct": 0.09423633029267409,
+    "daily_return_corr": 0.9977879255136438
+  },
+  "integrity": "features and HMM labels up to 2025-04-07 identical to the Step 7 files",
+  "fresh_label_counts": {
+    "bull": 190,
+    "sideways": 88,
+    "bear": 72,
+    "high_vol": 4
+  },
+  "fresh_label_by_month": {
+    "2025-04": "bear",
+    "2025-05": "bear",
+    "2025-06": "bull",
+    "2025-07": "bull",
+    "2025-08": "bull",
+    "2025-09": "bull",
+    "2025-10": "bull",
+    "2025-11": "bull",
+    "2025-12": "bull",
+    "2026-01": "bull",
+    "2026-02": "sideways",
+    "2026-03": "bear",
+    "2026-04": "bear",
+    "2026-05": "sideways",
+    "2026-06": "sideways",
+    "2026-07": "sideways",
+    "2026-08": "bull",
+    "2026-09": "bull"
+  },
+  "nifty_first_last": [
+    22535.849609375,
+    23118.599609375
+  ]
+}

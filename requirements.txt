@@ -1,0 +1,13 @@
+pandas>=2.2
+numpy>=2.0
+pyarrow
+pyyaml
+scikit-learn
+hmmlearn
+optuna
+torch
+matplotlib
+pytest
+yfinance
+streamlit
+plotly

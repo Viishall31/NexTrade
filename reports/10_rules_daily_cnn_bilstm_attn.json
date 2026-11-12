@@ -1,0 +1,95 @@
+{
+  "decided_at": "2026-09-17T00:50:15",
+  "freq": "daily",
+  "arch": "cnn_bilstm_attn",
+  "validation_period": [
+    "2021-12-31 00:00:00",
+    "2024-04-30 00:00:00"
+  ],
+  "selection_rule": "max final capital on validation, subject to max drawdown >= buy & hold's (i.e. no deeper)",
+  "benchmarks_validation": {
+    "buy_and_hold": {
+      "initial_capital": 1000000.0,
+      "final_capital": 1300325.1054061237,
+      "net_profit": 300325.1054061237,
+      "total_return": 0.3003251054061238,
+      "cagr": 0.12242923970530262,
+      "max_drawdown": -0.16473148543730232,
+      "max_drawdown_rupees": -173580.14411018218,
+      "sharpe": 0.4849835604198093,
+      "n_trades": 1,
+      "n_round_trips": 1,
+      "win_rate": 1.0,
+      "total_costs": 1000.0,
+      "interest_earned": -141.6703373458243,
+      "time_in_market": 1.0
+    },
+    "cash_only_final": 1141670.337345762
+  },
+  "directions": {
+    "long_only": {
+      "instrument": "Nifty 50 ETF + cash",
+      "rule": {
+        "direction": "long_only",
+        "exposure_map": "risk_off",
+        "confirm": 1,
+        "min_confidence": 0.0,
+        "stop_loss": 0.05,
+        "name": "risk_off|confirm1|conf0|stop5"
+      },
+      "validation": {
+        "initial_capital": 1000000.0,
+        "final_capital": 1349133.709066226,
+        "net_profit": 349133.7090662259,
+        "total_return": 0.3491337090662259,
+        "cagr": 0.14076702907132344,
+        "max_drawdown": -0.08491464877374866,
+        "max_drawdown_rupees": -86719.41256070242,
+        "sharpe": 0.8626190717615956,
+        "n_trades": "11",
+        "n_round_trips": "6",
+        "win_rate": 0.5,
+        "total_costs": 11205.720299723005,
+        "interest_earned": 45057.96907497309,
+        "time_in_market": 0.6509598603839442
+      },
+      "drawdown_constraint_satisfied": true,
+      "n_rules_searched": 42,
+      "n_rules_eligible": 42,
+      "beats_buy_and_hold_on_validation": true,
+      "rank_of_spec_rule": 21
+    },
+    "long_short": {
+      "instrument": "Nifty futures, idealized (no lot size, spot price)",
+      "rule": {
+        "direction": "long_short",
+        "exposure_map": "ls_spec",
+        "confirm": 3,
+        "min_confidence": 0.0,
+        "stop_loss": null,
+        "name": "ls_spec|confirm3|conf0|nostop"
+      },
+      "validation": {
+        "initial_capital": 1000000.0,
+        "final_capital": 1542489.8217174152,
+        "net_profit": 542489.8217174152,
+        "total_return": 0.5424898217174152,
+        "cagr": 0.20998057100642065,
+        "max_drawdown": -0.09440483206209771,
+        "max_drawdown_rupees": -120590.91448242869,
+        "sharpe": 1.20146717046652,
+        "n_trades": "17",
+        "n_round_trips": "7",
+        "win_rate": 0.5714285714285714,
+        "total_costs": 21873.082624079478,
+        "interest_earned": 166535.80089642317,
+        "time_in_market": 0.9808027923211169
+      },
+      "drawdown_constraint_satisfied": true,
+      "n_rules_searched": 30,
+      "n_rules_eligible": 29,
+      "beats_buy_and_hold_on_validation": true,
+      "rank_of_spec_rule": 18
+    }
+  }
+}

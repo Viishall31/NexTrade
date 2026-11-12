@@ -1,0 +1,416 @@
+{
+  "evaluated_at": "2026-09-17T02:02:57",
+  "architectures": {
+    "lstm": {
+      "classification_fresh": {
+        "accuracy": 0.7033898305084746,
+        "macro_f1_present": 0.49535531656411186,
+        "confusion_matrix": [
+          [
+            158,
+            0,
+            32,
+            0
+          ],
+          [
+            0,
+            34,
+            29,
+            9
+          ],
+          [
+            23,
+            8,
+            57,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0
+          ]
+        ]
+      },
+      "classification_test": {
+        "accuracy": 0.7931034482758621,
+        "macro_f1_present": 0.6211328717049541
+      },
+      "predicted_counts": {
+        "bull": 181,
+        "sideways": 118,
+        "bear": 46,
+        "high_vol": 9
+      },
+      "systems": {
+        "exp1_long_only": {
+          "final_capital": 1032008.6782376325,
+          "net_profit": 32008.6782376325,
+          "total_return": 0.03200867823763254,
+          "max_drawdown": -0.11091169752194874,
+          "sharpe": -0.29929277834722967,
+          "n_trades": 9,
+          "total_costs": 9657.26327387453,
+          "interest_earned": 14569.655314948079,
+          "time_in_market": 0.8361581920903954,
+          "rule": "risk_off|confirm1|conf0.6|stop5",
+          "trading_pnl_excl_interest": 17439.02292268442,
+          "avg_exposure": 0.8361581920903954,
+          "same_exposure_no_signals_final": 1050037.65239027,
+          "test_year_final": 970050.9141121872
+        },
+        "exp1_long_short": {
+          "final_capital": 1061737.0491372135,
+          "net_profit": 61737.0491372135,
+          "total_return": 0.06173704913721356,
+          "max_drawdown": -0.12409584966480114,
+          "sharpe": -0.0759219918795151,
+          "n_trades": 11,
+          "total_costs": 14724.39283888099,
+          "interest_earned": 91065.6552412854,
+          "time_in_market": 0.9519774011299436,
+          "rule": "ls_risk_off|confirm1|conf0.6|stop5",
+          "trading_pnl_excl_interest": -29328.606104071907,
+          "avg_exposure": 0.9378531073446328,
+          "same_exposure_no_signals_final": 1044652.3310729656,
+          "test_year_final": 983902.8062013761
+        },
+        "exp2_default": {
+          "final_capital": 930076.9918274856,
+          "net_profit": -69923.00817251438,
+          "total_return": -0.0699230081725144,
+          "max_drawdown": -0.12245140107958707,
+          "sharpe": -1.4566882850205964,
+          "n_trades": 12,
+          "total_costs": 6437.699244806473,
+          "interest_earned": 33765.26893059038,
+          "time_in_market": 0.632768361581921,
+          "rule": "buy0.6|sell0.5|confirm2|scaled|stop8|cool5|cash",
+          "trading_pnl_excl_interest": -103688.27710310476,
+          "avg_exposure": 0.5819209039548022,
+          "same_exposure_no_signals_final": 1062488.7420534778,
+          "test_year_final": 992193.2609082886
+        },
+        "exp2_tuned_cash": {
+          "final_capital": 961420.4828969765,
+          "net_profit": -38579.51710302348,
+          "total_return": -0.03857951710302343,
+          "max_drawdown": -0.07812675821473836,
+          "sharpe": -1.1436915025030885,
+          "n_trades": 4,
+          "total_costs": 3995.139513432958,
+          "interest_earned": 32236.332778359072,
+          "time_in_market": 0.6045197740112994,
+          "rule": "buy0.7|sell0.6|confirm2|full|stop5|cool5|cash",
+          "trading_pnl_excl_interest": -70815.84988138254,
+          "avg_exposure": 0.6045197740112994,
+          "same_exposure_no_signals_final": 1061441.5434806496,
+          "test_year_final": 1021017.6682770976
+        },
+        "exp2_tuned_short": {
+          "final_capital": 928227.5351739818,
+          "net_profit": -71772.4648260182,
+          "total_return": -0.07177246482601818,
+          "max_drawdown": -0.09621002630524578,
+          "sharpe": -1.1052623559627275,
+          "n_trades": 18,
+          "total_costs": 10819.733307706909,
+          "interest_earned": 79564.46877783454,
+          "time_in_market": 0.8022598870056498,
+          "rule": "buy0.6|sell0.4|confirm2|scaled|stop5|cool5|short",
+          "trading_pnl_excl_interest": -151336.93360385275,
+          "avg_exposure": 0.6991525423728814,
+          "same_exposure_no_signals_final": 1056929.3052211402,
+          "test_year_final": 949524.4085478872
+        }
+      }
+    },
+    "cnn_bilstm_attn": {
+      "classification_fresh": {
+        "accuracy": 0.6299435028248588,
+        "macro_f1_present": 0.4187198246497438,
+        "confusion_matrix": [
+          [
+            156,
+            0,
+            34,
+            0
+          ],
+          [
+            0,
+            29,
+            36,
+            7
+          ],
+          [
+            25,
+            25,
+            38,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0
+          ]
+        ]
+      },
+      "classification_test": {
+        "accuracy": 0.8405172413793104,
+        "macro_f1_present": 0.5797411572632095
+      },
+      "predicted_counts": {
+        "bull": 181,
+        "sideways": 108,
+        "bear": 58,
+        "high_vol": 7
+      },
+      "systems": {
+        "exp1_long_only": {
+          "final_capital": 1124388.481186833,
+          "net_profit": 124388.481186833,
+          "total_return": 0.12438848118683299,
+          "max_drawdown": -0.0670177726285538,
+          "sharpe": 0.3036372875102965,
+          "n_trades": 7,
+          "total_costs": 7740.413178211515,
+          "interest_earned": 18286.369502021396,
+          "time_in_market": 0.7994350282485876,
+          "rule": "risk_off|confirm1|conf0|stop5",
+          "trading_pnl_excl_interest": 106102.1116848116,
+          "avg_exposure": 0.7994350282485876,
+          "same_exposure_no_signals_final": 1051926.1450666608,
+          "test_year_final": 962902.666449827
+        },
+        "exp1_long_short": {
+          "final_capital": 1136451.625460082,
+          "net_profit": 136451.62546008197,
+          "total_return": 0.13645162546008205,
+          "max_drawdown": -0.05777977790008082,
+          "sharpe": 0.3755526262303231,
+          "n_trades": 14,
+          "total_costs": 12244.44715212349,
+          "interest_earned": 91244.6294416915,
+          "time_in_market": 0.980225988700565,
+          "rule": "ls_spec|confirm3|conf0|nostop",
+          "trading_pnl_excl_interest": 45206.99601839046,
+          "avg_exposure": 0.8290960451977402,
+          "same_exposure_no_signals_final": 1050403.1540215565,
+          "test_year_final": 1066782.1050474725
+        },
+        "exp2_default": {
+          "final_capital": 961066.4403029748,
+          "net_profit": -38933.55969702522,
+          "total_return": -0.03893355969702528,
+          "max_drawdown": -0.08795413997903523,
+          "sharpe": -1.4266522091095883,
+          "n_trades": 17,
+          "total_costs": 8612.14968235621,
+          "interest_earned": 40435.61880383327,
+          "time_in_market": 0.635593220338983,
+          "rule": "buy0.6|sell0.5|confirm2|scaled|stop8|cool5|cash",
+          "trading_pnl_excl_interest": -79369.17850085848,
+          "avg_exposure": 0.5070621468926554,
+          "same_exposure_no_signals_final": 1065873.2428409988,
+          "test_year_final": 1004726.7184800073
+        },
+        "exp2_tuned_cash": {
+          "final_capital": 953171.5838882655,
+          "net_profit": -46828.41611173446,
+          "total_return": -0.046828416111734494,
+          "max_drawdown": -0.09156255029327476,
+          "sharpe": -1.4536133110363803,
+          "n_trades": 19,
+          "total_costs": 9595.751846321999,
+          "interest_earned": 37731.95871937775,
+          "time_in_market": 0.6412429378531074,
+          "rule": "buy0.5|sell0.6|confirm2|scaled|nostop|cool0|cash",
+          "trading_pnl_excl_interest": -84560.37483111222,
+          "avg_exposure": 0.538135593220339,
+          "same_exposure_no_signals_final": 1064484.1337296248,
+          "test_year_final": 1006074.4775920664
+        },
+        "exp2_tuned_short": {
+          "final_capital": 971386.0580271259,
+          "net_profit": -28613.941972874105,
+          "total_return": -0.028613941972874146,
+          "max_drawdown": -0.09708110980403284,
+          "sharpe": -0.8511177298421895,
+          "n_trades": 23,
+          "total_costs": 10146.137515556713,
+          "interest_earned": 83503.03112563433,
+          "time_in_market": 0.7146892655367232,
+          "rule": "buy0.5|sell0.6|confirm3|scaled|stop5|cool0|short",
+          "trading_pnl_excl_interest": -112116.97309850843,
+          "avg_exposure": 0.6002824858757062,
+          "same_exposure_no_signals_final": 1061638.7887844064,
+          "test_year_final": 1025998.9720703453
+        }
+      }
+    },
+    "transformer": {
+      "classification_fresh": {
+        "accuracy": 0.8107344632768362,
+        "macro_f1_present": 0.6515471749736046,
+        "confusion_matrix": [
+          [
+            188,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            38,
+            20,
+            14
+          ],
+          [
+            15,
+            16,
+            57,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4
+          ]
+        ]
+      },
+      "classification_test": {
+        "accuracy": 0.8793103448275862,
+        "macro_f1_present": 0.8364645429799914
+      },
+      "predicted_counts": {
+        "bull": 203,
+        "sideways": 79,
+        "bear": 54,
+        "high_vol": 18
+      },
+      "systems": {
+        "exp1_long_only": {
+          "final_capital": 1007329.2909211544,
+          "net_profit": 7329.290921154432,
+          "total_return": 0.007329290921154419,
+          "max_drawdown": -0.062269159372472904,
+          "sharpe": -0.5704375926950715,
+          "n_trades": 4,
+          "total_costs": 4061.5930044495,
+          "interest_earned": 18773.90007037702,
+          "time_in_market": 0.7711864406779662,
+          "rule": "risk_off|confirm2|conf0|stop5",
+          "trading_pnl_excl_interest": -11444.60914922259,
+          "avg_exposure": 0.7711864406779662,
+          "same_exposure_no_signals_final": 1053358.3536428541,
+          "test_year_final": 929568.8158575202
+        },
+        "exp1_long_short": {
+          "final_capital": 982702.7182517017,
+          "net_profit": -17297.281748298323,
+          "total_return": -0.017297281748298365,
+          "max_drawdown": -0.10961404393159524,
+          "sharpe": -0.5226980751784581,
+          "n_trades": 6,
+          "total_costs": 11685.301224630824,
+          "interest_earned": 78925.72173910709,
+          "time_in_market": 0.9943502824858758,
+          "rule": "ls_risk_off|confirm3|conf0|nostop",
+          "trading_pnl_excl_interest": -96223.00348740541,
+          "avg_exposure": 0.9689265536723164,
+          "same_exposure_no_signals_final": 1042961.6253936975,
+          "test_year_final": 884083.04412367
+        },
+        "exp2_default": {
+          "final_capital": 951127.794989814,
+          "net_profit": -48872.20501018595,
+          "total_return": -0.048872205010185965,
+          "max_drawdown": -0.08764657990909686,
+          "sharpe": -1.3765308766872293,
+          "n_trades": 13,
+          "total_costs": 7544.321817366286,
+          "interest_earned": 34048.25038835616,
+          "time_in_market": 0.6610169491525424,
+          "rule": "buy0.6|sell0.5|confirm2|scaled|stop8|cool5|cash",
+          "trading_pnl_excl_interest": -82920.45539854211,
+          "avg_exposure": 0.5819209039548022,
+          "same_exposure_no_signals_final": 1062488.7420534778,
+          "test_year_final": 990485.4804758352
+        },
+        "exp2_tuned_cash": {
+          "final_capital": 980449.1931324681,
+          "net_profit": -19550.80686753185,
+          "total_return": -0.019550806867531856,
+          "max_drawdown": -0.0736930145228537,
+          "sharpe": -0.9101230071626032,
+          "n_trades": 4,
+          "total_costs": 4040.542461010379,
+          "interest_earned": 29254.177824544815,
+          "time_in_market": 0.6440677966101694,
+          "rule": "buy0.5|sell0.5|confirm2|full|stop5|cool5|cash",
+          "trading_pnl_excl_interest": -48804.984692076665,
+          "avg_exposure": 0.6440677966101694,
+          "same_exposure_no_signals_final": 1059580.7141246563,
+          "test_year_final": 1019524.8537180701
+        },
+        "exp2_tuned_short": {
+          "final_capital": 881299.8986077782,
+          "net_profit": -118700.10139222175,
+          "total_return": -0.11870010139222176,
+          "max_drawdown": -0.12018439322950458,
+          "sharpe": -1.4508948944294013,
+          "n_trades": 19,
+          "total_costs": 10615.301122931487,
+          "interest_earned": 76982.47910977456,
+          "time_in_market": 0.9067796610169492,
+          "rule": "buy0.6|sell0.6|confirm3|scaled|nostop|cool5|short",
+          "trading_pnl_excl_interest": -195682.58050199633,
+          "avg_exposure": 0.7401129943502824,
+          "same_exposure_no_signals_final": 1054913.1115713452,
+          "test_year_final": 1019884.3593737168
+        }
+      }
+    }
+  },
+  "period": [
+    "2025-04-07",
+    "2026-09-15"
+  ],
+  "n_days": 354,
+  "buy_and_hold": {
+    "rulebook": {
+      "buy_threshold": 0.5,
+      "sell_threshold": 0.5,
+      "confirm_days": 1,
+      "sizing": "full",
+      "strong_margin": 0.15,
+      "stop_loss": null,
+      "cooldown_days": 0,
+      "on_sell": "cash",
+      "name": "buy0.5|sell0.5|confirm1|full|nostop|cool0|cash"
+    },
+    "initial_capital": 1000000.0,
+    "final_capital": 1040164.6661231153,
+    "net_profit": 40164.66612311534,
+    "total_return": 0.04016466612311542,
+    "cagr": 0.028429141014447712,
+    "max_drawdown": -0.1519634543851498,
+    "max_drawdown_rupees": -180043.4603440673,
+    "sharpe": -0.16795070618051405,
+    "n_trades": 1,
+    "n_round_trips": 1,
+    "win_rate": 1.0,
+    "total_costs": 1000.0,
+    "interest_earned": -85.29728229806629,
+    "time_in_market": 1.0
+  },
+  "cash_only_final": 1085297.2822980296,
+  "true_label_counts": {
+    "bull": 190,
+    "sideways": 88,
+    "bear": 72,
+    "high_vol": 4
+  }
+}

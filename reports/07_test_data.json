@@ -1,0 +1,56 @@
+{
+  "cleaning": {
+    "source": "C:/Users/bhojw/Desktop/Capstone Project/Nifty50_test.csv",
+    "raw_rows": 6014,
+    "duplicate_rows_dropped": 200,
+    "duplicate_days": 8,
+    "conflicting_duplicate_bars": 8,
+    "out_of_session_rows_dropped": 4,
+    "out_of_session_dates": [
+      "2024-11-01"
+    ],
+    "single_bar_gaps_filled": 0,
+    "days_dropped_for_gaps": {
+      "2024-05-18": 18,
+      "2025-04-08": 22
+    },
+    "ohlc_violations_fixed": 0,
+    "return_outliers": [],
+    "calendar_gaps": [],
+    "final_rows": 5800,
+    "final_days": 232,
+    "start": "2024-05-02 09:15:00",
+    "end": "2025-04-07 15:15:00"
+  },
+  "test_days": 232,
+  "test_15min_bars": 5800,
+  "test_period": [
+    "2024-05-02",
+    "2025-04-07"
+  ],
+  "test_regime_share": {
+    "sideways": 0.651,
+    "bull": 0.263,
+    "bear": 0.086
+  },
+  "test_regime_days": {
+    "sideways": 151,
+    "bull": 61,
+    "bear": 20
+  },
+  "by_month": {
+    "2024-05": "bull",
+    "2024-06": "bear",
+    "2024-07": "bull",
+    "2024-08": "sideways",
+    "2024-09": "bull",
+    "2024-10": "sideways",
+    "2024-11": "sideways",
+    "2024-12": "sideways",
+    "2025-01": "sideways",
+    "2025-02": "sideways",
+    "2025-03": "sideways",
+    "2025-04": "sideways"
+  },
+  "integrity": "pre-test features and labels identical to training files"
+}

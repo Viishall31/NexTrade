@@ -1,0 +1,27 @@
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local credentials and Streamlit secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Local logs and experiment tracking
+*.log
+reports/experiments.jsonl
+
+# Local browser profile and JavaScript build dependencies
+deliverables/**/build/edge_profile/
+deliverables/**/build/node_modules/
+deliverables/**/build/__pycache__/
+
+# Duplicate project copy and local agent state
+/NexTrade_Project/
+/.agents/
+/.claude/

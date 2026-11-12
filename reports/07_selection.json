@@ -1,0 +1,60 @@
+{
+  "decided_at": "2026-09-17T00:15:08",
+  "based_on": "validation split (Jan 2022 \u2013 Apr 2024), tuned configs, 5-seed means",
+  "rule": "macro-F1 within 2 pp of best (0.762); then highest Sharpe",
+  "candidates": {
+    "lstm": {
+      "macro_f1": 0.6850615965701825,
+      "sharpe": 0.6954538758400762,
+      "objective": 0.6370974747207863,
+      "trial": 38,
+      "params": {
+        "lr": 0.003383690017427767,
+        "batch_size": 64,
+        "dropout": 0.3790933388275678,
+        "hidden": 128,
+        "layers": 3
+      },
+      "within_f1_tolerance": false,
+      "flags": []
+    },
+    "cnn_bilstm_attn": {
+      "macro_f1": 0.7616130547745181,
+      "sharpe": 0.6722162297481592,
+      "objective": 0.6799299968311321,
+      "trial": 41,
+      "params": {
+        "lr": 0.005021969374578551,
+        "batch_size": 16,
+        "dropout": 0.42850282544204826,
+        "hidden": 128,
+        "layers": 3
+      },
+      "within_f1_tolerance": true,
+      "flags": [
+        "best classifier but not best Sharpe"
+      ]
+    },
+    "transformer": {
+      "macro_f1": 0.7581220243621255,
+      "sharpe": 0.7697340147998454,
+      "objective": 0.6908377499239213,
+      "trial": 48,
+      "params": {
+        "lr": 0.001505282619085066,
+        "batch_size": 64,
+        "dropout": 0.30805759612501976,
+        "hidden": 128,
+        "heads": 4,
+        "ff_dim": 256
+      },
+      "within_f1_tolerance": true,
+      "flags": []
+    }
+  },
+  "eligible": [
+    "cnn_bilstm_attn",
+    "transformer"
+  ],
+  "selected": "transformer"
+}

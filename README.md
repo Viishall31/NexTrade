@@ -18,16 +18,19 @@ python -m streamlit run dashboard\app.py
 
 The dashboard uses the included `data/`, `reports/`, and `config/` files.
 
-## Deploy on Streamlit Community Cloud
+## Deploy on Render
 
-1. Push this project to a GitHub repository.
-2. In [Streamlit Community Cloud](https://share.streamlit.io/), choose **Create app**.
-3. Select the repository and `main` branch.
-4. Set the app file to `dashboard/app.py`, then deploy.
+The root `render.yaml` defines a free Render web service, installs the dashboard
+dependencies, and runs Streamlit on Render's assigned port.
 
-The app's dependencies are listed in `dashboard/requirements.txt`. Keep the
-repository private if the hosted dashboard should remain private; access and
-sharing settings are managed in Streamlit Community Cloud.
+1. Sign in to [Render](https://dashboard.render.com/) and connect GitHub.
+2. Create a **Blueprint** from the private `Viishall31/NexTrade` repository.
+3. Review the `nextrade-dashboard` service and deploy it.
+
+The GitHub repository stays private, but the Render web-service URL is publicly
+accessible. Render's free service may spin down after inactivity, so the first
+request after a quiet period can take about a minute. Do not upload secrets or
+personal data to a publicly accessible dashboard.
 
 ## Repository contents
 

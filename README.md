@@ -4,6 +4,10 @@ NexTrade is a Streamlit dashboard and research project for Nifty 50 market-regim
 classification and backtesting. It displays the saved project results; opening the
 dashboard does not train models or place trades.
 
+## Live dashboard
+
+Visit the public dashboard: [nextrade-vs1.streamlit.app](https://nextrade-vs1.streamlit.app/).
+
 ## Run locally (Windows)
 
 From the project root, create and activate a virtual environment, install the
